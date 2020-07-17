@@ -2,4 +2,8 @@
 # decode it.
 
 # Your code here
+key_cache = {}
 
+
+def load_cache():
+    pass

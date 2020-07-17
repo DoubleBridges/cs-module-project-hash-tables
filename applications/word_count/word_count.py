@@ -2,7 +2,7 @@ from collections import Counter
 
 
 def word_count(s):
-    # Your code here
+    # # Your code here
     # curr_idx = 0
     # len_of_curr_word = 0
     # cache = {}
@@ -38,7 +38,7 @@ def word_count(s):
     #         add_to_cache(0)
     #         break
     #     # If the character is a letter or an apostrophe, add it to the word
-    #     if char.isalpha() or char == "'":
+    #     elif char.isalpha() or char == "'":
     #         print("hit", i, char)
     #         len_of_curr_word += 1
     #         # print(len_of_curr_word)
@@ -50,6 +50,8 @@ def word_count(s):
     #             add_to_cache(1)
     #         len_of_curr_word = 0
     #     curr_idx += 1
+
+    # return cache
 
     return dict(
         Counter(
@@ -63,17 +65,19 @@ def word_count(s):
                     )
                 )
                 for word in s.split(" ")
+                if word != ""
             ]
         )
     )
 
 
 if __name__ == "__main__":
-    print(word_count("Hello    hello"))
+    print(word_count('":;,.-+=/\\|[]{}()*^&'))
+    print(word_count("a a\ra\na\ta \t\r\n"))
     print(word_count("Hello"))
     print(word_count('Hello, my cat. And my cat doesn\'t say "hello" back.'))
-    print(
-        word_count(
-            "This is a test of the emergency broadcast network. This is only a test."
-        )
-    )
+    # print(
+    #     word_count(
+    #         "This is a test of the emergency broadcast network. This is only a test."
+    #     )
+    # )
